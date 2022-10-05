@@ -19,7 +19,6 @@ const game = function Game() {
     }    
     squares[i] = xIsNext ? 'X' : 'O';   
     oldHistory = oldHistory.concat([{squares: squares,}]);
-    console.log(oldHistory);
     setPlayHistory(oldHistory);   
     setStepNumber(oldHistory.length - 1);
     setXIsNext(!xIsNext);
@@ -34,8 +33,6 @@ const game = function Game() {
   function reverseHistory() {    
     setReverseHistory(!reverseHistoryCheck);
   };
-  console.log(playHistory[0]);
-  console.log(stepNumber);
   const current = playHistory[stepNumber].squares;
   
   const winning_squares = calculateWinner(current);
